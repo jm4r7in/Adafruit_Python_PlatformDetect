@@ -99,7 +99,6 @@ _RASPBERRY_PI_CM_IDS = (
     RASPBERRY_PI_CM3
 )
 
-
 _ODROID_40_PIN_IDS = (
     ODROID_C1,
     ODROID_C1_PLUS,
@@ -346,13 +345,6 @@ class Board:
         return self.detector.get_cpuinfo_field('Revision')
 
 
-@property
-    def any_raspberry_pi_cm(self):
-        """Check whether the current board is any Compute Module Raspberry Pi."""
-        return self.id in _RASPBERRY_PI_CM_IDS
-
-
-
     # pylint: disable=no-self-use
     def _beaglebone_id(self):
         """Try to detect id of a Beaglebone."""
@@ -432,6 +424,11 @@ class Board:
     def any_raspberry_pi_40_pin(self):
         """Check whether the current board is any 40-pin Raspberry Pi."""
         return self.id in _RASPBERRY_PI_40_PIN_IDS
+
+    @property
+    def any_raspberry_pi_cm(self):
+        """Check whether the current board is any Compute Module Raspberry Pi."""
+        return self.id in _RASPBERRY_PI_CM_IDS
 
     @property
     def any_beaglebone(self):
