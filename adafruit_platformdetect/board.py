@@ -94,6 +94,12 @@ _RASPBERRY_PI_40_PIN_IDS = (
     RASPBERRY_PI_4B
 )
 
+_RASPBERRY_PI_CM_IDS = (
+    RASPBERRY_PI_CM1,
+    RASPBERRY_PI_CM3
+)
+
+
 _ODROID_40_PIN_IDS = (
     ODROID_C1,
     ODROID_C1_PLUS,
@@ -338,6 +344,14 @@ class Board:
             # Something else, not a Pi.
             return None
         return self.detector.get_cpuinfo_field('Revision')
+
+
+@property
+    def any_raspberry_pi_cm(self):
+        """Check whether the current board is any Compute Module Raspberry Pi."""
+        return self.id in _RASPBERRY_PI_CM_IDS
+
+
 
     # pylint: disable=no-self-use
     def _beaglebone_id(self):
