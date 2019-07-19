@@ -264,7 +264,8 @@ _PI_REV_CODES = {
         '1a020a0', '2a020a0', # warranty bits
     ),
     RASPBERRY_PI_CM3_PLUS: (
-        'a02100', # warranty bits
+        'a02100', 
+        '1a02100', '2a02100', # warranty bits
     ),
     RASPBERRY_PI_3A_PLUS: (
         '9020e0',
